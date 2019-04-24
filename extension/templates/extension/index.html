@@ -1,0 +1,10 @@
+<center>{% if latest_question_list %}
+<h1>MCQ Questions</h1>
+    <ul style="max-width: 180px; margin-right: auto; margin-left: auto;">
+    {% for question in latest_question_list %}
+        <li><a href="{% url 'extension:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No questions are available.</p>
+{% endif %}</center>

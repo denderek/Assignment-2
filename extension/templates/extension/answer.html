@@ -1,0 +1,11 @@
+<center>
+<h2>The Result</h1>
+	
+{% if question.correctAnswer == answer %}<h1>Congrats, the answer was indeed {{question.correctAnswer}}</h1>{% endif %}
+
+{% if question.correctAnswer != answer %}<h1>Sorry, you chose {{answer}}, but the correct answer is {{question.correctAnswer}}</h1>{% endif %}
+
+<form action="{% url 'extension:index'%}" method="Get">
+<input type="submit" value="Back to Question List" />
+</form>
+</center>
